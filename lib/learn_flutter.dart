@@ -21,60 +21,70 @@ class _LearnflutterPageState extends State<LearnflutterPage> {
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.info_outline),
+          )
+        ],
       ),
-      body: Column(
-        children: [
-          Image.asset('images/h2r.jpg'),
-          const SizedBox(
-            height: 10,
-          ),
-          const Divider(
-            color: Colors.red,
-          ),
-          Container(
-            margin: const EdgeInsets.all(15.0),
-            padding: const EdgeInsets.all(5.0),
-            color: Colors.black,
-            width: double.infinity,
-            child: const Center(
-              child: Text(
-                'Kawasaki H2R',
-                style: TextStyle(color: Colors.lightGreen),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset('images/h2r.jpg'),
+            const SizedBox(
+              height: 10,
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            Container(
+              margin: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(5.0),
+              color: Colors.black,
+              width: double.infinity,
+              child: const Center(
+                child: Text(
+                  'Kawasaki H2R',
+                  style: TextStyle(color: Colors.lightGreen),
+                ),
               ),
             ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('TextButton'),
-          ),
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () {
-              debugPrint('This is the Kawasaki hot bike');
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Icon(
-                  Icons.local_fire_department,
-                  color: Colors.green,
-                ),
-                Text('Kawasaki'),
-                Icon(
-                  Icons.local_fire_department,
-                  color: Colors.green,
-                ),
-              ],
+            TextButton(
+              onPressed: () {},
+              child: const Text('TextButton'),
             ),
-          ),
-          Switch(
-              value: isSwitch,
-              onChanged: (bool newBool) {
-                setState(() {
-                  isSwitch = newBool;
-                });
-              })
-        ],
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                debugPrint('This is the Kawasaki hot bike');
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Icon(
+                    Icons.local_fire_department,
+                    color: Colors.green,
+                  ),
+                  Text('Kawasaki'),
+                  Icon(
+                    Icons.local_fire_department,
+                    color: Colors.green,
+                  ),
+                ],
+              ),
+            ),
+            Switch(
+                value: isSwitch,
+                onChanged: (bool newBool) {
+                  setState(() {
+                    isSwitch = newBool;
+                  });
+                }),
+            Image.network(
+                "https://bd.gaadicdn.com/processedimages/kawasaki/kawasaki-ninja-h2/640X309/v_ninja-h2-carbon1529040626.jpg?tr=w-360"),
+          ],
+        ),
       ),
     );
   }
